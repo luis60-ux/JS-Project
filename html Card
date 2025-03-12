@@ -1,0 +1,30 @@
+<!-- Estructura HTML para la aplicación de Pomodoro -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de pomodoros</title>
+  <link rel="stylesheet" href="main.css"> <!-- Enlace a la hoja de estilos externa -->
+</head>
+<body>
+  <div id="app">
+    <div id="time">
+      <div id="value"></div> <!-- Contenedor del temporizador -->
+      <div id="taskName"></div> <!-- Nombre de la tarea en curso -->
+    </div>
+
+    <div class="tasks-conteiner">
+      <div class="form">
+        <form action="" id="form"> <!-- Formulario para agregar tareas -->
+          <input type="text" id="itTask"> <!-- Campo de entrada para la nueva tarea -->
+          <input type="submit" id="bAdd" value="Agregar Tarea"> <!-- Botón para agregar la tarea -->
+        </form>
+      </div>
+      <div id="tasks"> <!-- Contenedor donde se mostrarán las tareas -->
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>
