@@ -1,0 +1,21 @@
+<!-- Estructura básica del documento HTML -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input con máscara</title>
+  <link rel="stylesheet" href="main.css"> <!-- Enlace a la hoja de estilos externa -->
+</head>
+<body>
+    <div id="app">
+        <div class="card"> <!-- Contenedor para la tarjeta -->
+          <div class="holder">Luis Fernandez</div> <!-- Nombre del titular de la tarjeta -->
+          <input type="text" id="inputCard"> <!-- Campo para el número de la tarjeta -->
+          <input type="text" id="inputDate"> <!-- Campo para la fecha de vencimiento -->
+          <input type="text" id="inputCVV"> <!-- Campo para el código de seguridad (CVV) -->
+        </div>
+    </div>
+  <script src="main.js"></script> <!-- Enlace al script JavaScript -->
+</body>
+</html>
