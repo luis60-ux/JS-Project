@@ -1,0 +1,62 @@
+// Selección de los campos de entrada
+const inputCard = document.querySelector('#inputCard');
+const inputDate = document.querySelector('#inputDate');
+const inputCVV = document.querySelector('#inputCVV');
+
+// Máscaras de formato para los campos de entrada
+const maskNumber = '####-####-####-####'; // Formato para número de tarjeta
+const maskDate = '#/##'; // Formato para fecha de vencimiento (MM/AA)
+const maskCVV = '###'; // Formato para código CVV
+
+// Arrays para almacenar los valores ingresados
+let cardNumber = [];
+let dateNumber = [];
+let cvvNumber = [];
+
+// Evento para manejar la entrada en el campo de número de tarjeta
+inputCard.addEventListener('keydown', (e) => {
+  if(e.key === 'Tab') {
+    return;
+  }
+  e.preventDefault();
+  handleInput(maskNumber, e.key, cardNumber);
+  inputCard.value = cardNumber.join("");
+});
+
+// Evento para manejar la entrada en el campo de fecha de vencimiento
+inputDate.addEventListener('keydown', e => {
+  if (e.key === "Tab") {
+    return;
+  }
+  e.preventDefault();
+  handleInput(maskDate, e.key, dateNumber);
+  inputDate.value = dateNumber.join("");
+});
+
+// Evento para manejar la entrada en el campo de CVV
+inputCVV.addEventListener('keydown', e => {
+  if (e.key === "Tab") {
+    return;
+  }
+  e.preventDefault();
+  handleInput(maskCVV, e.key, cvvNumber);
+  inputCVV.value = cvvNumber.join("");
+});
+
+// Función para aplicar la máscara de entrada
+function handleInput(mask, key, arr) {
+  let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  if(key === 'Backspace' && arr.length > 0) {
+    arr.pop();
+    return;
+  }
+  
+  if(numbers.includes(key) && arr.length + 1 <= mask.length) {
+    if (mask[arr.length] === "-" || mask[arr.length] === "/") {
+      arr.push(mask[arr.length], key);
+    } else {
+      arr.push(key);
+    }
+  }
+}
